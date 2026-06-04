@@ -13,24 +13,44 @@ Shodan မှာ dork ရိုက်ပြီး IP တွေဆွဲထုတ
 
 ---
 
-## INSTALL လုပ်နည်း
+##Installလုပ်ရန်
 
-```
+```bash
+git clone https://github.com/infohlaingbwar/d0rk3r
+cd d0rk3r
 pip install requests[socks]
+python3 d0rk3r.py -q "port:443"
 ```
 
 မရှိရင် ကိုယ့်ဘာသာ install လုပ်စရာမလိုဘူး — tool က run တာနဲ့ auto install လုပ်ပေးတယ်။
 
+### Termux
+
+```bash
+pkg install python
+pip install requests[socks]
+git clone https://github.com/infohlaingbwar/d0rk3r
+cd d0rk3r
+python d0rk3r.py -q "port:443"
+```
+
+### Kali / Debian / Ubuntu / WSL (PEP 668 error ရင်)
+
+```bash
+pip3 install --break-system-packages requests[socks]
+python3 d0rk3r.py -q "port:443"
+```
+
 ---
 
-## သုံးပုံ
+## သုံးနည်း
 
 ### ရိုးရိုး (proxy မပါ)
 
 ```
-python d0rk3r.py -q "port:443 country:MM"
-python d0rk3r.py -q "nginx"
-python d0rk3r.py -q "port:80 os:Windows"
+python3 d0rk3r.py -q "port:443 country:MM"
+python3 d0rk3r.py -q "nginx"
+python3 d0rk3r.py -q "port:80 os:Windows"
 ```
 
 ### proxy ပါ
@@ -46,17 +66,18 @@ http://9.10.11.12:3128
 ပြီးရင်
 
 ```
-python d0rk3r.py -q "port:443" -p proxy.txt --pages 5
+python3 d0rk3r.py -q "port:443" -p proxy.txt --pages 5
 ```
 
 ### result သိမ်း
 
 ```
-python d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
+python3 d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
 ```
 
 ---
 
+## Flag တွေ
 
 | Flag | ရှင်းလင်းချက် |
 |------|----------------|
@@ -71,6 +92,7 @@ python d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
 
 ---
 
+## Shodan free limit ကို ဘယ်လိုကျော်လဲ
 
 Shodan free က IP တစ်ခုကို ၂ page လောက်ပဲပေးတယ်။
 
@@ -83,5 +105,7 @@ Proxy C → page 1 (အသစ် 30)
 Proxy 10 လုံး × 2 pages ဆို IP 200-600+ ရနိုင်တယ်။
 
 ---
+
+
 
 Shodan web search ကို scrape လုပ်တာဖြစ်လို့ IP တွေက တိကျချင်မှတိကျမယ်။ ရလာတဲ့ IP တွေကို ကိုယ်တိုင်ပြန်စစ်ဖို့လိုတယ်။
