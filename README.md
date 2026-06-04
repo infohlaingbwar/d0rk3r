@@ -13,7 +13,7 @@ Shodan မှာ dork ရိုက်ပြီး IP တွေဆွဲထုတ
 
 ---
 
-## သွင်းယူရန်
+## INSTALL လုပ်နည်း
 
 ```
 pip install requests[socks]
@@ -57,7 +57,6 @@ python d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
 
 ---
 
-## Flag တွေ
 
 | Flag | ရှင်းလင်းချက် |
 |------|----------------|
@@ -72,7 +71,6 @@ python d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
 
 ---
 
-## Shodan free limit ကို ဘယ်လိုကျော်လဲ
 
 Shodan free က IP တစ်ခုကို ၂ page လောက်ပဲပေးတယ်။
 
@@ -85,7 +83,5 @@ Proxy C → page 1 (အသစ် 30)
 Proxy 10 လုံး × 2 pages ဆို IP 200-600+ ရနိုင်တယ်။
 
 ---
-
-## သတိထားရန်
 
 Shodan web search ကို scrape လုပ်တာဖြစ်လို့ IP တွေက တိကျချင်မှတိကျမယ်။ ရလာတဲ့ IP တွေကို ကိုယ်တိုင်ပြန်စစ်ဖို့လိုတယ်။
