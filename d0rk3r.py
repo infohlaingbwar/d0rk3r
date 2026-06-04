@@ -17,7 +17,10 @@ def ensure_module(module_name, pip_name=None):
     except ImportError:
         pkg = pip_name or module_name
         print(f"[+] Installing '{pkg}'...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
+        try:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
+        except subprocess.CalledProcessError:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "--break-system-packages", pkg])
         return importlib.import_module(module_name)
 
 requests = ensure_module("requests", "requests[socks]")
