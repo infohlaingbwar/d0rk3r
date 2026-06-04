@@ -9,11 +9,11 @@
  Author : https://github.com/infohlaingbwar
 ```
 
-Shodan မှာ dork ရိုက်ပြီး IP တွေဆွဲထုတ်ဖို့သုံးတာ။ API key မလိုဘူး။ Proxy ထည့်သုံးလို့ရတယ်။
+Shodan dork IP extractor. No API key needed. Supports proxy rotation.
 
 ---
 
-##Installလုပ်ရန်
+## Install
 
 ```bash
 git clone https://github.com/infohlaingbwar/d0rk3r
@@ -22,7 +22,7 @@ pip install requests[socks]
 python3 d0rk3r.py -q "port:443"
 ```
 
-မရှိရင် ကိုယ့်ဘာသာ install လုပ်စရာမလိုဘူး — tool က run တာနဲ့ auto install လုပ်ပေးတယ်။
+Auto-installs `requests` if missing.
 
 ### Termux
 
@@ -34,7 +34,7 @@ cd d0rk3r
 python d0rk3r.py -q "port:443"
 ```
 
-### Kali / Debian / Ubuntu / WSL (PEP 668 error ရင်)
+### Kali / Debian / Ubuntu / WSL (PEP 668 error)
 
 ```bash
 pip3 install --break-system-packages requests[socks]
@@ -43,9 +43,9 @@ python3 d0rk3r.py -q "port:443"
 
 ---
 
-## သုံးနည်း
+## Usage
 
-### ရိုးရိုး (proxy မပါ)
+### Basic (no proxy)
 
 ```
 python3 d0rk3r.py -q "port:443 country:MM"
@@ -53,9 +53,9 @@ python3 d0rk3r.py -q "nginx"
 python3 d0rk3r.py -q "port:80 os:Windows"
 ```
 
-### proxy ပါ
+### With proxy file
 
-proxy.txt ထဲမှာ ဒီလိုရေး
+Create `proxy.txt`:
 
 ```
 http://user:pass@1.2.3.4:8080
@@ -63,13 +63,13 @@ socks5://5.6.7.8:1080
 http://9.10.11.12:3128
 ```
 
-ပြီးရင်
+Then:
 
 ```
 python3 d0rk3r.py -q "port:443" -p proxy.txt --pages 5
 ```
 
-### result သိမ်း
+### Save output
 
 ```
 python3 d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
@@ -77,35 +77,38 @@ python3 d0rk3r.py -q "ActiveMQ" -p proxy.txt -o results.txt
 
 ---
 
-## Flag တွေ
+## Flags
 
-| Flag | ရှင်းလင်းချက် |
-|------|----------------|
-| `-q` | dork query |
-| `-p` | proxy.txt လမ်းကြောင်း |
-| `--pages` | proxy တစ်လုံးစီအတွက် request အရေအတွက် (default 2) |
-| `--page-max` | total request အများဆုံး |
-| `-o` | output သိမ်းမယ် |
-| `--timeout` | request timeout |
-| `--delay` | တစ်ခါပြီးတိုင်းစောင့်မယ် |
-| `--no-banner` | banner မပြစေချင်ရင် |
-
----
-
-## Shodan free limit ကို ဘယ်လိုကျော်လဲ
-
-Shodan free က IP တစ်ခုကို ၂ page လောက်ပဲပေးတယ်။
-
-Proxy သုံးရင် proxy တစ်လုံးချင်းစီမှာ သူ့ limit သူရှိတယ်။ ဒါကို လှည့်သုံးလိုက်တာ။
-
-Proxy A → page 1 (IP 30)
-Proxy B → page 1 (အသစ် 30)
-Proxy C → page 1 (အသစ် 30)
-
-Proxy 10 လုံး × 2 pages ဆို IP 200-600+ ရနိုင်တယ်။
+| Flag | Description |
+|------|-------------|
+| `-q` | Shodan dork query |
+| `-p` | Path to proxy file |
+| `--pages` | Requests per proxy (default: 2) |
+| `--page-max` | Max total requests (0 = auto) |
+| `-o` | Save output to file |
+| `--timeout` | Request timeout in sec |
+| `--delay` | Delay between requests in sec |
+| `--no-banner` | Skip banner |
 
 ---
 
+## How it bypasses Shodan free limit
 
+Shodan free gives ~2 pages per IP.
 
-Shodan web search ကို scrape လုပ်တာဖြစ်လို့ IP တွေက တိကျချင်မှတိကျမယ်။ ရလာတဲ့ IP တွေကို ကိုယ်တိုင်ပြန်စစ်ဖို့လိုတယ်။
+With proxy rotation, each proxy has its own rate limit:
+
+```
+Proxy A → page 1 (~30 IPs)
+Proxy B → page 1 (~30 new IPs)
+Proxy C → page 1 (~30 new IPs)
+...
+```
+
+10 proxies × 2 pages = 200-600+ unique IPs.
+
+---
+
+## Note
+
+This scrapes Shodan's public web search. IP accuracy is not guaranteed. Always verify results yourself.
