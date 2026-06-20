@@ -25,7 +25,7 @@ def ensure_module(module_name, pip_name=None):
 
 requests = ensure_module("requests", "requests[socks]")
 
-VERSION = "1.0"
+VERSION = "1.0.3"
 
 try:
     "─".encode(sys.stdout.encoding or "utf-8")
