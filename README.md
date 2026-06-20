@@ -1,18 +1,28 @@
 # D0RK3R
 
+<div align="center">
+
 ```
   ____  _____  ____  _  ____  _____  ____
- (  _ \(  _  )(  _ \( )/ ___)(  _  )(  _ \
-  )(_) ))(_)(( )(_) )|\___ \ )(_)(( )___/
+ (  _ \(  _  )(  _ \( )/ ___)(  _  )(  _   )(_) ))(_)(( )(_) )|\___ \ )(_)(( )___/
  (____/(_____)(____/(_)(____/(_____)(__)
-
- Author : https://github.com/infohlaingbwar
 ```
 
-Shodan dork IP extractor with **auto-proxy** support. No API key needed.
+**🔍 Shodan IP scraper with auto-proxy rotation. No API key needed.**
+
+[![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/infohlaingbwar/d0rk3r?style=social)](https://github.com/infohlaingbwar/d0rk3r/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/infohlaingbwar/d0rk3r)](https://github.com/infohlaingbwar/d0rk3r/issues)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+Perfect for OSINT, bug bounty & pentesting.
+
+[Features](#features) • [Install](#install) • [Usage](#usage) • [Examples](#shodan-dork-syntax)
+
+</div>
 
 ---
-
 ## Features
 
 ✅ **Auto-proxy** — Fetch working proxies from GitHub automatically  
