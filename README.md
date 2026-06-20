@@ -8,7 +8,7 @@
 
 
 [![PyPI version](https://badge.fury.io/py/d0rk3r.svg)](https://pypi.org/project/d0rk3r/)
-[![Downloads](https://pepy.tech/badge/d0rk3r)](https://pepy.tech/project/d0rk3r)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/d0rk3r)](https://pypi.org/project/d0rk3r/)
 
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
