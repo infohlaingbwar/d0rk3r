@@ -53,16 +53,16 @@ pip install -r requirements.txt
 
 ```bash
 # CVE hunting
-python3 d0rk3r.py -q "Apache/2.4.49" --auto-proxy -o results.txt
+python -m d0rk3r -q "Apache/2.4.49" --auto-proxy -o results.txt
 
 # Bug bounty recon
-python3 d0rk3r.py -q 'org:"Tesla Motors"' --auto-proxy --pages 3
+python -m d0rk3r -q 'org:"Tesla Motors"' --auto-proxy --pages 3
 
 # IoT devices
-python3 d0rk3r.py -q "port:554 rtsp country:MM" --auto-proxy
+python -m d0rk3r -q "port:554 rtsp country:MM" --auto-proxy
 
 # Vulnerable hosts
-python3 d0rk3r.py -q "vuln:CVE-2021-41773" --auto-proxy
+python -m d0rk3r -q "vuln:CVE-2021-41773" --auto-proxy
 ```
 
 ### Manual proxy file
@@ -78,13 +78,13 @@ http://9.10.11.12:3128
 Then:
 
 ```bash
-python3 d0rk3r.py -q "port:443" -p proxy.txt --pages 5
+python -m d0rk3r -q "port:443" -p proxy.txt --pages 5
 ```
 
 ### No proxy (direct)
 
 ```bash
-python3 d0rk3r.py -q "nginx country:MM"
+python -m d0rk3r -q "nginx country:MM"
 ```
 
 ---
@@ -107,7 +107,7 @@ python3 d0rk3r.py -q "nginx country:MM"
 **Combine queries:**
 
 ```bash
-python3 d0rk3r.py -q "Apache/2.4.49 country:MM port:443" --auto-proxy
+python -m d0rk3r -q "Apache/2.4.49 country:MM port:443" --auto-proxy
 ```
 
 ---
@@ -157,7 +157,7 @@ Proxy C → page 1 (~300 new IPs)
 ## Example Output
 
 ```bash
-$ python3 d0rk3r.py -q "nginx" --auto-proxy --pages 1
+$ python -m d0rk3r -q "nginx" --auto-proxy --pages 1
 
  [*] Auto-fetching proxies...
  [+] Loaded 13 working proxies
