@@ -2,9 +2,13 @@
 
 <div align="center">
 
-<img src="logo.png" alt="D0RK3R Logo" width="600"/>
+<img src="https://raw.githubusercontent.com/infohlaingbwar/d0rk3r/main/logo.png" alt="D0RK3R Logo" width="600"/>
 
 **🔍 Shodan IP scraper with auto-proxy rotation. No API key needed.**
+
+
+[![PyPI version](https://badge.fury.io/py/d0rk3r.svg)](https://pypi.org/project/d0rk3r/)
+[![Downloads](https://pepy.tech/badge/d0rk3r)](https://pepy.tech/project/d0rk3r)
 
 [![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
