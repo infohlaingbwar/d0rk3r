@@ -234,6 +234,7 @@ def main():
     )
     parser.add_argument("-q", "--query", required=True, help="Shodan dork query")
     parser.add_argument("-p", "--proxy", help="Proxy list file (one per line)")
+    parser.add_argument("--auto-proxy", action="store_true", help="Auto-fetch proxies from GitHub")
     parser.add_argument("--pages", type=int, default=2, help="Requests per proxy (default: 2)")
     parser.add_argument("--page-max", type=int, default=0, help="Max total requests (0 = auto)")
     parser.add_argument("-o", "--output", help="Output file")
@@ -245,7 +246,24 @@ def main():
     if not args.no_banner:
         print(BANNER)
 
-    proxies = load_proxies(args.proxy)
+    # Auto-fetch proxies if requested
+    proxies = []
+    if args.auto_proxy:
+        try:
+            import sys, os
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            sys.path.insert(0, script_dir)
+            from proxy_fetcher import get_proxies
+            print(f" {C['Y']}[*] Auto-fetching proxies...{C['X']}")
+            proxies = get_proxies(verify=True, use_cache=True)
+            if proxies:
+                print(f" {C['G']}[+] Loaded {len(proxies)} working proxies{C['X']}")
+            else:
+                print(f" {C['R']}[!] No proxies available{C['X']}")
+        except Exception as e:
+            print(f" {C['R']}[!] Error: {e}{C['X']}")
+    elif args.proxy:
+        proxies = load_proxies(args.proxy)
     if proxies:
         print(f" {C['C']}{T_TL}{T_H}{C['X']} Proxies   : {C['G']}{len(proxies)}{C['X']}")
         total_est = len(proxies) * args.pages

@@ -1,0 +1,20 @@
+# Proxy cache
+.proxy_cache.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Backup files
+*.backup
+*.bak
+
+# Output files
+*.txt
+!requirements.txt
+
+# IDE
+.vscode/
+.idea/
