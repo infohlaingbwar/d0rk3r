@@ -2,11 +2,7 @@
 
 <div align="center">
 
-```
-  ____  _____  ____  _  ____  _____  ____
- (  _ \(  _  )(  _ \( )/ ___)(  _  )(  _   )(_) ))(_)(( )(_) )|\___ \ )(_)(( )___/
- (____/(_____)(____/(_)(____/(_____)(__)
-```
+<img src="logo.png" alt="D0RK3R Logo" width="600"/>
 
 **🔍 Shodan IP scraper with auto-proxy rotation. No API key needed.**
 
