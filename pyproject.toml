@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "MIT"}
 authors = [
-    {name = "Hlaing Bwar", email = "infohlaingbwar@gmail.com"}
+    {name = "Hlaing Bwar", email = "info@hlaingbwar.com"}
 ]
 keywords = ["shodan", "osint", "recon", "bug-bounty", "pentesting", "proxy", "scraper", "security"]
 classifiers = [

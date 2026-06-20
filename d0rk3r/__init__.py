@@ -5,7 +5,7 @@ Author: Hlaing Bwar (https://github.com/infohlaingbwar)
 
 __version__ = "1.0.3"
 __author__ = "Hlaing Bwar"
-__email__ = "infohlaingbwar@gmail.com"
+__email__ = "info@hlaingbwar.com"
 __license__ = "MIT"
 
 from .cli import main
