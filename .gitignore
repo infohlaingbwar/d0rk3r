@@ -18,3 +18,7 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
+d0rk3r.egg-info/
+dist/
+build/
+*.egg-info/

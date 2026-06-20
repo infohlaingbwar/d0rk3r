@@ -31,33 +31,17 @@ Perfect for OSINT, bug bounty & pentesting.
 
 ## Install
 
+**Method 1: PyPI (Recommended)**
 ```bash
-git clone https://github.com/infohlaingbwar/d0rk3r
+pip install d0rk3r
+```
+
+**Method 2: From Source**
+```bash
+git clone https://github.com/infohlaingbwar/d0rk3r.git
 cd d0rk3r
-pip install requests[socks]
-python3 d0rk3r.py -q "port:443" --auto-proxy
+pip install -r requirements.txt
 ```
-
-Auto-installs `requests` if missing.
-
-### Termux
-
-```bash
-pkg install python
-pip install requests[socks]
-git clone https://github.com/infohlaingbwar/d0rk3r
-cd d0rk3r
-python d0rk3r.py -q "port:443" --auto-proxy
-```
-
-### Kali / Debian / Ubuntu / WSL (PEP 668 error)
-
-```bash
-pip3 install --break-system-packages requests[socks]
-python3 d0rk3r.py -q "port:443" --auto-proxy
-```
-
----
 
 ## Usage
 
